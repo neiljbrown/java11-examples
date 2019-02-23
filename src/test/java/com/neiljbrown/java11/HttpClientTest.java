@@ -1,5 +1,5 @@
 /*
- *  Copyright 2018-present the original author or authors.
+ *  Copyright 2019-present the original author or authors.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -102,7 +102,7 @@ public class HttpClientTest {
         // Set a connection timeout.
         // NOTE - There isn't currently an option to set a default read timeout (at least not via the builder) for
         // the HttpClient, although one can be set per request.
-        .connectTimeout(Duration.ofMillis(500))
+        .connectTimeout(Duration.ofMillis(1000))
         // Proxy - The client can also be configured to use a proxy via the proxy(...) method.
         // etc.
         .build();
