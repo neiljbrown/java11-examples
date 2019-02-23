@@ -1,0 +1,63 @@
+= Java 11 Examples
+:sectlinks:
+:sectnums:
+:sectnumlevels: 4
+:toclevels: 4
+
+== Purpose
+This project provides a set of Java code examples illustrating the subset of new language features and APIs that were
+introduced in Java 11 that are of interest to developers
+
+The examples are implemented as a set of easy to run tests, using JUnit (5).
+
+== Source Code
+The source code for the examples can be found in the src/test/java folder.
+
+An explanation of the showcased language features, along with guidance on their usage, can be found in the Javadoc of
+each of the code examples. (See the commands for generating Javadoc below).
+
+== Building and Running the Examples
+You will need to install a Java 11 JDK.
+
+Support is provided for building and running the project using either Gradle or Maven as described in the sections
+below.
+
+=== Gradle
+The minimum required version of Gradle will be installed if you execute the build using the supplied Gradle wrapper
+script (./gradlew).
+
+To compile and run all the example tests, enter the  following command in the project's root folder:
+
+`./gradlew clean test`
+
+To generate the Javadoc, use the following command:
+
+`./gradlew clean javadocTests`
+
+The generated Javadoc can be found in the standard location for a Gradle project - build/docs/javadoc/index.html.
+
+For more details of Gradle build support see build.gradle in the project's root folder.
+
+=== Maven
+The minimum required version of Maven will be installed if you execute the build using the supplied Maven wrapper
+script (./mvnw).
+
+To compile and run all the example tests, enter the following command in the project's root folder:
+
+`./mvnw clean test`
+
+To generate the Javadoc, use the following command:
+
+`./mvnw javadoc:test-javadoc`
+
+The generated Javadoc can be found in the standard location for a Maven project - target/site/testapidocs/index.html.
+
+For more details of Maven build support see pom.xml in the project's root folder.
+
+== Other Examples
+You can find similar code examples for the new features introduced in earlier versions in Java in my other code
+repos, including -
+
+* Java 10 - See https://github.com/neiljbrown/java10-examples[GitHub project neiljbrown/java10-examples]
+* Java 9 - See https://github.com/neiljbrown/java9-examples[GitHub project neiljbrown/java9-examples]
+* Java 7 and 8 - See my https://bitbucket.org/neilbrown/[Bitbucket projects]
