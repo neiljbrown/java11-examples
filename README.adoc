@@ -10,6 +10,9 @@ introduced in Java 11 that are of interest to developers
 
 The examples are implemented as a set of easy to run tests, using JUnit (5).
 
+For a broader look at the new features in JDK 11 that are of most interest to developers see my blog post
+https://neiljbrown.com/2018/11/10/java-11-new-features-code-examples-support/[Java 11 – New Features, Code Examples & Support].
+
 == Source Code
 The source code for the examples can be found in the src/test/java folder.
 
