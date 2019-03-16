@@ -67,7 +67,7 @@ public class StringTest {
    * in preference to {@link String#trim()}, at least in new code.
    *
    * @see #testStripLeading()
-   * @see #testStripLeading()
+   * @see #testStripTrailing()
    */
   @Test
   public void testStripSimilarityAndDifferenceToTrim() {
@@ -124,7 +124,7 @@ public class StringTest {
   /**
    * The String class has got a new method to repeatedly concatenate its characters a specified no. of times -
    * {@link String#repeat(int)}. The assumption is that the method performs better than using
-   * {@link StringBuilder#append(String)}.
+   * {@link StringBuilder#append(String)} in a loop.
    */
   @Test
   public void testRepeat() {
