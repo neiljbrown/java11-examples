@@ -1,11 +1,14 @@
-node('manam-1') {  
-    stage('git') {
-        git 'https://github.com/yadavallimallikharjua/java11-examples.git'
-   }
-stage('build') {
-    sh 'mvn clean package'
-   }
-stage ('archive') {
-   archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false  
-    }
-}   
+pipeline {
+    agent {label 'manam-1'}
+    triggers { upstream(upstreamProjects: 'dum', threshold: hudson.model.Result.SUCCESS) }
+    stages {
+        stage ('scm') {
+            steps {
+                git 'https://github.com/yadavallimallikharjua/java11-examples.git'
+            }
+        }
+        stage ('build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
