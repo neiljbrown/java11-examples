@@ -6,6 +6,6 @@ stage('build') {
     sh 'mvn clean package'
    }
 stage ('archive') {
-   archiveArtifacts artifacts: '*target/*.xml', followSymlinks: false  
+   archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false  
     }
 }   
