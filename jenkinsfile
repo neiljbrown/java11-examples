@@ -1,0 +1,11 @@
+node('manam-1') {  
+    stage('git') {
+        git 'https://github.com/yadavallimallikharjua/java11-examples.git'
+   }
+stage('build') {
+    sh 'mvn clean package'
+   }
+stage ('archive') {
+   archiveArtifacts artifacts: '*target-*.xml', followSymlinks: false  
+    }
+}   
