@@ -12,5 +12,13 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+    }   
+           post {
+               always {
+                   mail from: "ananya@gmail.com",
+                           to:"krish@gmail.com" ,
+                           subject: "status success",
+                           body: "send result"
+
     }  
 }
