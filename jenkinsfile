@@ -8,8 +8,10 @@ pipeline {
             }
         }
         stage ('build') {
-            steps {
+            steps { 
+                withSOnarQubeEnv(Name: 'SONAR_9.2.1', envOnly: true,Id: 'SONAR_TOKEN') 
                 sh 'mvn clean package'
+                echo "${env.SONAR_HOST-URL}"
             }
         }
     }   
@@ -22,4 +24,4 @@ pipeline {
 
     }  
 }
-}
+} 
