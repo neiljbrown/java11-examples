@@ -10,8 +10,9 @@ pipeline {
         stage ('build') {
             steps { 
                 withSOnarQubeEnv(installationName: 'SONAR_9.2.1', envOnly: true,credentialsId: 'SONAR_TOKEN') 
-                steps { 
-                  'mvn clean package sonar:sonar'
+                  'mvn clean package 
+             steps {     
+                 'sonar:sonar'
                 echo "${env.SONAR_HOST_URL}"
             }
             }
