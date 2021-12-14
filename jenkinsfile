@@ -15,7 +15,7 @@ pipeline {
             }
         }
     }   
-    
+
            post {
                always {
                    mail from: "ananya@gmail.com",
@@ -27,4 +27,3 @@ pipeline {
 
     }  
 }
-} 
