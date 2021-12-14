@@ -7,23 +7,23 @@ pipeline {
                 git 'https://github.com/yadavallimallikharjua/java11-examples.git'
             }
         }
-        stage ('build') {
+        stage ('build && SonarQube analysis') {
             steps { 
-                withSOnarQubeEnv(installationName: 'SONAR_9.2.1', envOnly: true,credentialsId: 'SONAR_TOKEN') 
-                  'mvn clean package' 
-             steps {     
-                 'sonar:sonar'
+                withSOnarQubeEnv(installationName: 'SONAR_9.2.1', envOnly: true,credentialsId: 'SONAR_TOKEN') {     
+                 sh 'mvn clean package sonar:sonar'
                 echo "${env.SONAR_HOST_URL}"
-            }
             }
         }
     }   
+    
            post {
                always {
                    mail from: "ananya@gmail.com",
                            to:"krish@gmail.com" ,
                            subject: "status success",
                            body: "send result"
+               }
+           }
 
     }  
 }
