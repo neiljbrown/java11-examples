@@ -1,0 +1,21 @@
+pipeline {
+    agent {label 'manam-1'}
+    triggers { upstream(upstreamProjects: 'dum', threshold: hudson.model.Result.SUCCESS) }
+    stages {
+        stage ('scm') {
+            steps {
+                git 'https://github.com/yadavallimallikharjua/java11-examples.git'
+            }
+        }
+        stage ('build && SonarQube analysis') {
+            steps { 
+                withSOnarQubeEnv(installationName: 'SONAR_9.2.1', envOnly: true,credentialsId: 'SONAR_TOKEN') {     
+                 sh 'mvn clean package sonar:sonar'
+                echo "${env.SONAR_HOST_URL}"
+            }
+        }
+    }   
+    }
+    
+
+
